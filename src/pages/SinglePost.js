@@ -4,6 +4,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { Card, Form, Grid, Image } from "semantic-ui-react";
 import moment from "moment";
 import LikeButton from "../components/LikeButton";
+import { Link } from "react-router-dom";
 
 import { AuthContext } from "../context/auth";
 import DeleteButton from "../components/DeleteButton";
@@ -72,28 +73,14 @@ function SinglePost(props) {
               <Card.Content extra>
                 <LikeButton user={user} post={{ id, likeCount, likes }} />
                 <MyPopup content="Comments">
-                  <div class="ui labeled button" tabindex="0">
-                    <div class="ui basic blue button">
-                      <i class="comments icon"></i>
-                    </div>
-                    <a href="#" class="ui basic left pointing blue label">
-                      {commentCount}
-                    </a>
-                  </div>
-                  {/* <div class="ui labeled button" tabindex="0">
+                  <Button as="div" labelPosition="right">
                     <Button basic color="blue">
                       <Icon name="comments" />
                     </Button>
                     <Label basic color="blue" pointing="left">
                       {commentCount}
                     </Label>
-                  </div> */}
-                  {/* <div class="ui labeled button" tabindex="0">
-                    <div class="ui basic blue button">
-                      <i class="comments icon"></i>
-                    </div>
-                    <a class="ui basic left pointing blue label">{commentCount}</a>
-                  </div> */}
+                  </Button>
                 </MyPopup>
                 {user && user.username === username && (
                   <DeleteButton postId={id} callBack={deletePostCallback} />

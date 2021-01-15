@@ -14,7 +14,8 @@ function PostCard({
   const { user } = useContext(AuthContext);
   return (
     <Card fluid>
-      <Card.Content>
+      <p>test</p>
+      <Card.Content as={Link} to={`/posts/${id}`}>
         <Image
           floated="right"
           size="mini"
@@ -29,7 +30,7 @@ function PostCard({
           <LikeButton user={user} post={{ id, likes, likeCount }} />
           <MyPopup content="Comment on post">
             <Button labelPosition="right">
-              <Button color="blue" basic>
+              <Button color="blue" basic as={Link} to={`/posts/${id}`}>
                 <Icon name="comments" />
               </Button>
               <Label basic color="blue" pointing="left">
