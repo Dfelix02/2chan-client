@@ -2,9 +2,14 @@ Made following this guide <https://www.youtube.com/watch?v=n1mdAPFq2Os&ab_channe
 
 <h1>Tech<h1/>
   React.js
- JWT
-Graphql
-  Apollo 
+  <br>
+  JWT
+  <br>
+  Graphql
+  <br>
+  Apollo
+  <br>
+  
 
 up and running using Netlify.
 
