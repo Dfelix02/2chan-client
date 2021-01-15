@@ -40,9 +40,7 @@ function LikeButton({ user, post: { id, likeCount, likes } }) {
       onClick={user ? likePost : null}
     >
       <MyPopup content={liked ? "Unlike" : "Like"}>{likeButton}</MyPopup>
-      <a href="#" className="ui teal left pointing basic label">
-        {likeCount}
-      </a>
+      <button className="ui teal left pointing basic label">{likeCount}</button>
     </div>
   );
 }
