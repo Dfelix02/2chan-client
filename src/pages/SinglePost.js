@@ -73,14 +73,14 @@ function SinglePost(props) {
               <Card.Content extra>
                 <LikeButton user={user} post={{ id, likeCount, likes }} />
                 <MyPopup content="Comments">
-                  <Button as="div" labelPosition="right">
+                  <div class="ui labeled button" tabindex="0">
                     <Button basic color="blue">
                       <Icon name="comments" />
                     </Button>
                     <Label basic color="blue" pointing="left">
                       {commentCount}
                     </Label>
-                  </Button>
+                  </div>
                 </MyPopup>
                 {user && user.username === username && (
                   <DeleteButton postId={id} callBack={deletePostCallback} />
