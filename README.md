@@ -9,6 +9,7 @@ Made following this guide <https://www.youtube.com/watch?v=n1mdAPFq2Os&ab_channe
   <br>
   Apollo
   <br>
+  <hr/>
   
 
 up and running using Netlify.
