@@ -4,7 +4,6 @@ import { useMutation, useQuery } from "@apollo/client";
 import { Card, Form, Grid, Image } from "semantic-ui-react";
 import moment from "moment";
 import LikeButton from "../components/LikeButton";
-import { Link } from "react-router-dom";
 
 import { AuthContext } from "../context/auth";
 import DeleteButton from "../components/DeleteButton";
