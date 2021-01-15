@@ -76,7 +76,7 @@ function SinglePost(props) {
                     <div class="ui basic blue button">
                       <i class="comments icon"></i>
                     </div>
-                    <a class="ui basic left pointing blue label">
+                    <a href="#" class="ui basic left pointing blue label">
                       {commentCount}
                     </a>
                   </div>
