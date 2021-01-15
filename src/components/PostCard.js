@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Button, Card, Image } from "semantic-ui-react";
+import { Button, Card, Image, Icon, Label } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import moment from "moment";
 
@@ -14,7 +14,6 @@ function PostCard({
   const { user } = useContext(AuthContext);
   return (
     <Card fluid>
-      <p>test</p>
       <Card.Content as={Link} to={`/posts/${id}`}>
         <Image
           floated="right"
