@@ -73,13 +73,27 @@ function SinglePost(props) {
                 <LikeButton user={user} post={{ id, likeCount, likes }} />
                 <MyPopup content="Comments">
                   <div class="ui labeled button" tabindex="0">
+                    <div class="ui basic blue button">
+                      <i class="comments icon"></i>
+                    </div>
+                    <a class="ui basic left pointing blue label">
+                      {commentCount}
+                    </a>
+                  </div>
+                  {/* <div class="ui labeled button" tabindex="0">
                     <Button basic color="blue">
                       <Icon name="comments" />
                     </Button>
                     <Label basic color="blue" pointing="left">
                       {commentCount}
                     </Label>
-                  </div>
+                  </div> */}
+                  {/* <div class="ui labeled button" tabindex="0">
+                    <div class="ui basic blue button">
+                      <i class="comments icon"></i>
+                    </div>
+                    <a class="ui basic left pointing blue label">{commentCount}</a>
+                  </div> */}
                 </MyPopup>
                 {user && user.username === username && (
                   <DeleteButton postId={id} callBack={deletePostCallback} />
