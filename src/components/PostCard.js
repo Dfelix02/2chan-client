@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Card, Image } from "semantic-ui-react";
+import { Button, Card, Image } from "semantic-ui-react";
 import { Link, useHistory } from "react-router-dom";
 import moment from "moment";
 
@@ -31,23 +31,14 @@ function PostCard({
         <div>
           <LikeButton user={user} post={{ id, likes, likeCount }} />
           <MyPopup content="Comment on post">
-            <div className="ui right labeled button" role="button" tabIndex="0">
-              <button
-                className="ui blue basic button"
-                onClick={() => {
-                  history.push(`/posts/${id}`);
-                }}
-              >
-                <i aria-hidden="true" className="comments icon"></i>
-              </button>
-              <button
-                to={`/posts/${id}`}
-                as={Link}
-                className="ui blue left pointing basic label"
-              >
+            <Button labelPosition="right" as={Link} to={`/posts/${id}`}>
+              <Button color="blue" basic>
+                <Icon name="comments" />
+              </Button>
+              <Label basic color="blue" pointing="left">
                 {commentCount}
-              </button>
-            </div>
+              </Label>
+            </Button>
           </MyPopup>
 
           {user && user.username === username && <DeleteButton postId={id} />}

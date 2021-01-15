@@ -73,27 +73,14 @@ function SinglePost(props) {
               <Card.Content extra>
                 <LikeButton user={user} post={{ id, likeCount, likes }} />
                 <MyPopup content="Comment on post">
-                  <div
-                    className="ui right labeled button"
-                    role="button"
-                    tabIndex="0"
-                    onClick={console.log("comment on post")}
-                  >
-                    <button
-                      className="ui blue basic button"
-                      as={Link}
-                      to={`/posts/${id}`}
-                    >
-                      <i aria-hidden="true" className="comments icon"></i>
-                    </button>
-                    <a
-                      href={`/posts/${id}`}
-                      as={Link}
-                      className="ui blue left pointing basic label"
-                    >
+                  <Button as="div" labelPosition="right">
+                    <Button basic color="blue">
+                      <Icon name="comments" />
+                    </Button>
+                    <Label basic color="blue" pointing="left">
                       {commentCount}
-                    </a>
-                  </div>
+                    </Label>
+                  </Button>
                 </MyPopup>
                 {user && user.username === username && (
                   <DeleteButton postId={id} callBack={deletePostCallback} />
