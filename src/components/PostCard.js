@@ -38,13 +38,13 @@ function PostCard({
               >
                 <i aria-hidden="true" className="comments icon"></i>
               </button>
-              <a
-                href={`/posts/${id}`}
+              <button
+                to={`/posts/${id}`}
                 as={Link}
                 className="ui blue left pointing basic label"
               >
                 {commentCount}
-              </a>
+              </button>
             </div>
           </MyPopup>
 
