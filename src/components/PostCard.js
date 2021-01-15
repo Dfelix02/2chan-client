@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Card, Image } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import moment from "moment";
 
 import { AuthContext } from "../context/auth";
@@ -12,7 +12,11 @@ import CommentButton from "./CommentButton";
 function PostCard({
   post: { body, createdAt, id, username, likeCount, commentCount, likes },
 }) {
+  const history = useHistory();
   const { user } = useContext(AuthContext);
+  const redirectToPost = () => {
+    history.push(`/posts/${id}`);
+  };
   return (
     <Card fluid>
       <Card.Content>
@@ -32,8 +36,7 @@ function PostCard({
           <LikeButton user={user} post={{ id, likes, likeCount }} />
           <MyPopup content="Comment on post">
             <CommentButton
-              as={Link}
-              to={`/posts/${id}`}
+              onClick={redirectToPost}
               commentCount={commentCount}
             />
           </MyPopup>
