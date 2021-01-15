@@ -7,6 +7,7 @@ import { AuthContext } from "../context/auth";
 import LikeButton from "./LikeButton";
 import DeleteButton from "./DeleteButton";
 import MyPopup from "../util/MyPopup";
+import CommentButton from "./CommentButton";
 
 function PostCard({
   post: { body, createdAt, id, username, likeCount, commentCount, likes },
@@ -30,22 +31,11 @@ function PostCard({
         <div>
           <LikeButton user={user} post={{ id, likes, likeCount }} />
           <MyPopup content="Comment on post">
-            <div className="ui right labeled button" role="button" tabIndex="0">
-              <button
-                className="ui blue basic button"
-                as={Link}
-                to={`/posts/${id}`}
-              >
-                <i aria-hidden="true" className="comments icon"></i>
-              </button>
-              <button
-                to={`/posts/${id}`}
-                as={Link}
-                className="ui blue left pointing basic label"
-              >
-                {commentCount}
-              </button>
-            </div>
+            <CommentButton
+              as={Link}
+              to={`/posts/${id}`}
+              commentCount={commentCount}
+            />
           </MyPopup>
 
           {user && user.username === username && <DeleteButton postId={id} />}
